@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Imtiaz | Performance Marketing Specialist</title>
+<meta name="description" content="Performance Marketing Specialist scaling online brands globally. Meta and Google certified. Paid media, SEO, GEO, and AI-driven campaigns.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1F44;
+  --navy-deep:#061530;
+  --accent:#FF6B35;
+  --paper:#FAF8F5;
+  --body:#1C2537;
+  --muted:#6B7A94;
+  --hair:#E3E6EC;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+#loader{position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s ease}
+#loader.hide{opacity:0;pointer-events:none}
+.l-name{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;color:#fff;opacity:0;animation:fadeIn .8s .2s forwards}
+.l-name span{color:var(--accent)}
+.l-sub{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-top:.75rem;opacity:0;animation:fadeIn .8s .6s forwards}
+.l-bar{width:0;height:2px;background:var(--accent);margin-top:2rem;animation:grow 1.4s .9s ease forwards}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes grow{to{width:180px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-in{max-width:1180px;margin:0 auto;padding:1.1rem 2.5rem;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-size:1.05rem;font-weight:800;letter-spacing:-.01em;color:#fff}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2.25rem;list-style:none;align-items:center}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--accent);color:#fff !important;padding:.5rem 1.1rem;border-radius:2px;font-weight:600}
+.nav-cta:hover{opacity:.9}
+
+#hero{background:var(--navy);color:#fff;padding:10rem 0 0;position:relative;overflow:hidden}
+.hero-grid{max-width:1180px;margin:0 auto;padding:0 2.5rem 5rem;display:grid;grid-template-columns:1.35fr 1fr;gap:5rem;align-items:center}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;opacity:0;animation:fadeUp .7s .1s forwards}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
+h1.hero-h{font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.75rem;opacity:0;animation:fadeUp .7s .25s forwards}
+h1.hero-h em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:1.02rem;line-height:1.75;color:rgba(255,255,255,.62);max-width:520px;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s .4s forwards}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .55s forwards}
+.btn{font-family:'Inter',sans-serif;padding:.9rem 1.9rem;border-radius:2px;font-size:.82rem;font-weight:600;letter-spacing:.03em;text-decoration:none;cursor:pointer;border:none;transition:all .25s;display:inline-block}
+.btn-p{background:var(--accent);color:#fff}
+.btn-p:hover{background:#ff7f4f;transform:translateY(-1px)}
+.btn-g{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.28)}
+.btn-g:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+
+.approach{background:var(--navy-deep);border:1px solid rgba(255,255,255,.09);padding:2.25rem;opacity:0;animation:fadeUp .7s .7s forwards}
+.approach-h{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);padding-bottom:1.1rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem}
+.ap-item{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.ap-item:last-child{border-bottom:none;padding-bottom:0}
+.ap-n{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent);margin-bottom:.4rem}
+.ap-t{font-size:.92rem;font-weight:600;color:#fff;margin-bottom:.35rem}
+.ap-d{font-size:.8rem;line-height:1.65;color:rgba(255,255,255,.5)}
+
+.ticker{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.08);padding:.85rem 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:ticker 28s linear infinite}
+.ticker-i{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);padding:0 1.75rem}
+.ticker-d{color:var(--accent);font-size:.6rem;align-self:center}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 2.5rem}
+section.sec{padding:6.5rem 0}
+.sec-head{margin-bottom:3.5rem}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--accent)}
+h2.sec-h{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--navy);max-width:660px}
+.sec-desc{font-size:.98rem;line-height:1.8;color:var(--muted);max-width:600px;margin-top:1.25rem}
+
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:5rem;align-items:start}
+.about-body p{font-size:1rem;line-height:1.85;color:var(--body);margin-bottom:1.4rem}
+.about-body p strong{font-weight:600;color:var(--navy)}
+.about-pull{border-left:3px solid var(--accent);padding:.3rem 0 .3rem 1.5rem;margin:2rem 0;font-size:1.02rem;line-height:1.75;color:var(--navy);font-weight:500}
+.side-card{border:1px solid var(--hair);background:#fff;padding:1.75rem}
+.side-title{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.05em;padding:.35rem .75rem;border:1px solid var(--hair);color:var(--muted);background:var(--paper)}
+
+#caps{background:#fff;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.caps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;border-top:1px solid var(--hair);border-left:1px solid var(--hair)}
+.cap{padding:2.25rem 2rem;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:background .25s}
+.cap:hover{background:var(--paper)}
+.cap-n{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--accent);margin-bottom:1rem}
+.cap-t{font-size:1.02rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
+.cap-d{font-size:.86rem;line-height:1.75;color:var(--muted)}
+
+.exp-row{display:grid;grid-template-columns:280px 1fr;gap:4rem;padding:2.75rem 0;border-top:1px solid var(--hair);opacity:0;transform:translateY(18px);transition:all .65s ease}
+.exp-row.visible{opacity:1;transform:translateY(0)}
+.exp-row:last-child{border-bottom:1px solid var(--hair)}
+.exp-date{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;color:var(--accent);margin-bottom:.6rem}
+.exp-co{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.exp-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .55rem;border:1px solid var(--hair);color:var(--muted)}
+.exp-role{font-size:1.08rem;font-weight:600;color:var(--navy);margin-bottom:1.1rem}
+.exp-ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.exp-ul li{font-size:.9rem;line-height:1.75;color:var(--body);padding-left:1.35rem;position:relative}
+.exp-ul li::before{content:'';position:absolute;left:0;top:.62rem;width:6px;height:1px;background:var(--accent)}
+
+#work{background:var(--navy);color:#fff}
+#work h2.sec-h{color:#fff}
+#work .sec-desc{color:rgba(255,255,255,.55)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:3.5rem 0;border-top:1px solid rgba(255,255,255,.1);opacity:0;transform:translateY(18px);transition:all .65s ease}
+.case.visible{opacity:1;transform:translateY(0)}
+.case:last-of-type{border-bottom:1px solid rgba(255,255,255,.1)}
+.case-cat{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+.case-t{font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:700;line-height:1.25;letter-spacing:-.02em;margin-bottom:1.75rem}
+.opr{margin-bottom:1.35rem}
+.opr-l{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.4rem}
+.opr-t{font-size:.9rem;line-height:1.8;color:rgba(255,255,255,.72)}
+.case-res{background:var(--navy-deep);border-left:2px solid var(--accent);padding:1.1rem 1.4rem;font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.85);margin-top:1.5rem}
+.case-res strong{color:var(--accent);font-weight:600}
+.case-tools{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
+.case-tool{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.6)}
+.panel{background:var(--navy-deep);border:1px solid rgba(255,255,255,.09);padding:1.9rem;align-self:start}
+.panel-h{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);padding-bottom:.9rem;border-bottom:1px solid rgba(255,255,255,.09);margin-bottom:1.4rem}
+.bar-row{margin-bottom:1.1rem}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,.55);margin-bottom:.45rem}
+.bar-lbl b{font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:500}
+.bar-bg{height:3px;background:rgba(255,255,255,.09)}
+.bar-fg{height:100%;background:var(--accent)}
+.p-stack{display:flex;flex-direction:column;gap:.55rem}
+.p-item{background:rgba(255,255,255,.035);border-left:2px solid var(--accent);padding:.75rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.p-item.dim{border-left-color:rgba(255,255,255,.2)}
+.p-item span:first-child{font-size:.82rem;color:#fff}
+.p-item span:last-child{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em}
+.p-foot{display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.09)}
+.p-stat{text-align:center;flex:1}
+.p-stat b{display:block;font-family:'JetBrains Mono',monospace;font-size:1.05rem;color:var(--accent);font-weight:600}
+.p-stat span{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.3rem;display:block}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border-top:1px solid var(--hair);border-left:1px solid var(--hair)}
+.cert{padding:1.9rem;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);background:#fff;transition:all .25s;opacity:0;transform:translateY(16px)}
+.cert.visible{opacity:1;transform:translateY(0)}
+.cert:hover{background:var(--paper)}
+.cert-issuer{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+.cert-n{font-size:.98rem;font-weight:600;color:var(--navy);line-height:1.45;margin-bottom:.5rem}
+.cert-d{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted)}
+
+#contact{background:var(--navy-deep);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.c-h{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.5rem}
+.c-h em{font-style:normal;color:var(--accent)}
+.c-p{font-size:.95rem;line-height:1.8;color:rgba(255,255,255,.6);margin-bottom:2.5rem;max-width:400px}
+.c-links{display:flex;flex-direction:column}
+.c-link{display:flex;align-items:center;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.1);text-decoration:none;color:#fff;font-size:.88rem;transition:all .25s}
+.c-link:hover{color:var(--accent);padding-left:.4rem}
+.c-ic{width:32px;height:32px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-ic svg{width:15px;height:15px}
+.form{display:flex;flex-direction:column;gap:1.15rem}
+.fg{display:flex;flex-direction:column;gap:.45rem}
+.fg label{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.fg input,.fg textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.13);border-radius:2px;padding:.85rem 1rem;color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;transition:border-color .25s;resize:none}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.25)}
+.fg input:focus,.fg textarea:focus{outline:none;border-color:var(--accent)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem}
+.fbtn{align-self:flex-start;padding:.9rem 2.2rem;background:var(--accent);color:#fff;border:none;border-radius:2px;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:all .25s}
+.fbtn:hover{background:#ff7f4f;transform:translateY(-1px)}
+
+footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.09);padding:1.75rem 0}
+.f-in{max-width:1180px;margin:0 auto;padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.f-t{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+.reveal{opacity:0;transform:translateY(22px);transition:all .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  .hero-grid,.about-grid,.case,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .exp-row{grid-template-columns:1fr;gap:1.5rem}
+  .nav-links li:not(:last-child){display:none}
+  .wrap,.nav-in,.f-in,.hero-grid{padding-left:1.5rem;padding-right:1.5rem}
+  .frow{grid-template-columns:1fr}
+  #hero{padding-top:7rem}
+  section.sec{padding:4.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="l-name">MARIA IMTIAZ<span>.</span></div>
+  <div class="l-sub">Performance Marketing</div>
+  <div class="l-bar"></div>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <div class="nav-logo">MARIA IMTIAZ<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="go('about');return false">About</a></li>
+      <li><a href="#" onclick="go('caps');return false">Capabilities</a></li>
+      <li><a href="#" onclick="go('exp');return false">Experience</a></li>
+      <li><a href="#" onclick="go('work');return false">Work</a></li>
+      <li><a href="#" onclick="go('certs');return false">Certifications</a></li>
+      <li><a href="#" class="nav-cta" onclick="go('contact');return false">Let's Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Performance Marketing Specialist</div>
+      <h1 class="hero-h">Paid campaigns built for <em>ROAS</em>, not impressions.</h1>
+      <p class="hero-sub">I build and optimize campaigns across Meta Ads, Google Ads, TikTok, and LinkedIn for brands scaling globally, owning strategy end to end from audience research and creative testing through GA4 analysis and performance optimization.</p>
+      <div class="hero-btns">
+        <button class="btn btn-p" onclick="go('work')">View Case Studies</button>
+        <a href="mailto:mariaimtiaz5022@gmail.com" class="btn btn-g">Get in Touch</a>
+      </div>
+    </div>
+    <div class="approach">
+      <div class="approach-h">How I Work</div>
+      <div class="ap-item">
+        <div class="ap-n">01</div>
+        <div class="ap-t">Test before scaling</div>
+        <div class="ap-d">Small structured tests establish what works before budget moves behind it.</div>
+      </div>
+      <div class="ap-item">
+        <div class="ap-n">02</div>
+        <div class="ap-t">Data as a roadmap</div>
+        <div class="ap-d">Campaign data drives the next decision rather than justifying the last one.</div>
+      </div>
+      <div class="ap-item">
+        <div class="ap-n">03</div>
+        <div class="ap-t">Document what wins</div>
+        <div class="ap-d">Learnings compound across campaigns instead of resetting each time.</div>
+      </div>
+      <div class="ap-item">
+        <div class="ap-n">04</div>
+        <div class="ap-t">Build for durability</div>
+        <div class="ap-d">Strategies grounded in creative insight and technical rigor survive algorithm shifts.</div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-i">Meta Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Google Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Performance Max</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Advantage+</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">TikTok Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">LinkedIn Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">GA4</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">GEO</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">SEO</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">AI Marketing</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Meta Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Google Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Performance Max</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">Advantage+</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">TikTok Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">LinkedIn Ads</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">GA4</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">GEO</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">SEO</span><span class="ticker-d">◆</span>
+      <span class="ticker-i">AI Marketing</span><span class="ticker-d">◆</span>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">About</div>
+      <h2 class="sec-h">I help brands achieve meaningful growth through data-driven, multi-channel campaigns.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I've built and optimized campaigns across Meta Ads, Google Ads, TikTok, and LinkedIn for international clients globally. I've managed end-to-end strategy, from audience research and creative testing through GA4 analysis and performance optimization, consistently delivering measurable improvements in ROAS, traffic growth, and conversion rates.</p>
+        <p>I'm equally comfortable leading organic social strategy or diving into paid media performance, and I work across the full stack of modern search visibility including SEO and Generative Engine Optimization.</p>
+        <div class="about-pull">I treat campaign data as a roadmap, not an afterthought. I test before I scale, I document what works, and I build strategies that survive algorithm changes because they're grounded in both creative insight and technical rigor.</div>
+        <p>If you're hiring a marketer who can own campaigns end to end and communicate with equal fluency to designers, developers, and leadership, <strong>let's talk.</strong></p>
+      </div>
+      <div class="reveal">
+        <div class="side-card">
+          <div class="side-title">Core Focus</div>
+          <div class="chips">
+            <span class="chip">Paid Media</span>
+            <span class="chip">Performance Max</span>
+            <span class="chip">Meta Advantage+</span>
+            <span class="chip">GEO / AEO</span>
+            <span class="chip">SEO</span>
+            <span class="chip">GA4</span>
+            <span class="chip">AI Marketing</span>
+            <span class="chip">Social Strategy</span>
+            <span class="chip">Email Automation</span>
+            <span class="chip">E-commerce</span>
+            <span class="chip">A/B Testing</span>
+            <span class="chip">Conversion Tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="caps" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Capabilities</div>
+      <h2 class="sec-h">What I own end to end.</h2>
+      <p class="sec-desc">From the first audience hypothesis to the report that explains what moved, and why.</p>
+    </div>
+    <div class="caps-grid reveal">
+      <div class="cap"><div class="cap-n">01</div><div class="cap-t">Paid Search &amp; Social</div><div class="cap-d">Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads. Performance Max and Advantage+ campaign architecture, bidding strategy, and budget allocation across the funnel.</div></div>
+      <div class="cap"><div class="cap-n">02</div><div class="cap-t">Analytics &amp; Attribution</div><div class="cap-d">GA4, Google Tag Manager, Meta Pixel. Conversion tracking setup, event architecture, and KPI dashboards that make campaign decisions obvious.</div></div>
+      <div class="cap"><div class="cap-n">03</div><div class="cap-t">Creative Testing</div><div class="cap-d">Structured A/B testing on creative, copy, and landing pages. Documented learnings that compound instead of resetting each campaign.</div></div>
+      <div class="cap"><div class="cap-n">04</div><div class="cap-t">SEO &amp; GEO</div><div class="cap-d">On-page and technical SEO, schema markup, keyword research via SEMrush and Ahrefs. Generative Engine Optimization for visibility in ChatGPT, AI Overviews, Perplexity, and Gemini.</div></div>
+      <div class="cap"><div class="cap-n">05</div><div class="cap-t">AI-Driven Workflows</div><div class="cap-d">ChatGPT, Jasper AI, and Midjourney integrated into content and creative production, with human editing that protects brand voice at scale.</div></div>
+      <div class="cap"><div class="cap-n">06</div><div class="cap-t">Lifecycle &amp; Email</div><div class="cap-d">Klaviyo, Mailchimp, HubSpot. Drip sequences, segmentation, and campaign flows optimized against open, click, and conversion rates.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="exp" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Experience</div>
+      <h2 class="sec-h">Where I've done the work.</h2>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-date">JUL 2026 / PRESENT</div>
+        <div class="exp-co">FlyRank AI</div>
+        <span class="exp-tag">Internship</span>
+      </div>
+      <div>
+        <div class="exp-role">AI Marketing Intern</div>
+        <ul class="exp-ul">
+          <li>Working on AI-driven marketing initiatives, focusing on how generative platforms reshape brand discovery and search visibility</li>
+          <li>Applying Generative Engine Optimization principles to improve brand presence across AI-powered search surfaces</li>
+          <li>Supporting campaign strategy and performance analysis using AI-assisted research and creative workflows</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-date">FEB 2025 / APR 2026</div>
+        <div class="exp-co">Sadabyte</div>
+        <span class="exp-tag">Freelance</span>
+      </div>
+      <div>
+        <div class="exp-role">Meta Ad Manager</div>
+        <ul class="exp-ul">
+          <li>Managed end-to-end Meta advertising campaigns covering audience targeting, creative direction, budget pacing, and ongoing optimization</li>
+          <li>Built full-funnel structures using Advantage+ campaigns paired with retargeting layers to improve lead quality</li>
+          <li>Ran continuous A/B tests across creative and copy variations, documenting learnings to inform scaling decisions</li>
+          <li>Delivered performance reporting that translated ad metrics into clear business recommendations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-date">OCT 2022 / AUG 2024</div>
+        <div class="exp-co">Shurooq Media</div>
+        <span class="exp-tag">Freelance</span>
+      </div>
+      <div>
+        <div class="exp-role">Digital &amp; Social Media Marketing Manager</div>
+        <ul class="exp-ul">
+          <li>Led full-funnel paid advertising across Google Ads, Meta Ads, and Instagram for multiple client accounts using Meta Advantage+ and Google Performance Max</li>
+          <li>Integrated AI tools including ChatGPT, Jasper AI, and Midjourney into creative workflows, accelerating turnaround while maintaining brand consistency</li>
+          <li>Optimized content for Generative Engine Optimization using structured data, schema markup, and FAQ formatting to improve visibility in ChatGPT, Google AI Overviews, and Perplexity</li>
+          <li>Designed and deployed email campaigns tracking open rates, click-throughs, and conversions to refine targeting and creative</li>
+          <li>Built monthly performance reports translating data into actionable campaign improvements</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
+        <div class="exp-date">JAN 2021 / NOV 2021</div>
+        <div class="exp-co">Hassan &amp; Hussain Enterprises</div>
+        <span class="exp-tag">Full-time</span>
+      </div>
+      <div>
+        <div class="exp-role">Social Media Marketing Manager</div>
+        <ul class="exp-ul">
+          <li>Built and executed social media strategies aligned with business goals across Facebook, Instagram, and LinkedIn</li>
+          <li>Planned and managed paid social campaigns on Meta covering audience targeting, ad creative, budget allocation, and optimization</li>
+          <li>Collaborated with niche influencers to amplify campaigns and expand organic reach within target audiences</li>
+          <li>Tracked social KPIs including reach, engagement rate, CTR, and conversions, delivering weekly insights to leadership</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Selected Work</div>
+      <h2 class="sec-h">Campaigns, and what they actually changed.</h2>
+      <p class="sec-desc">Each case follows the same structure: the objective, the process, and the result.</p>
+    </div>
+
+    <div class="case">
+      <div>
+        <div class="case-cat">Paid Social</div>
+        <div class="case-t">Cutting Through a Crowded Real Estate Market</div>
+        <div class="opr"><div class="opr-l">Objective</div><div class="opr-t">Generate qualified leads for a UAE real estate client on a lean budget, competing in one of the most saturated paid media verticals in the region.</div></div>
+        <div class="opr"><div class="opr-l">Process</div><div class="opr-t">Built full-funnel Meta campaigns using Advantage+ to surface high-intent buyers, with retargeting sequences to re-engage warm leads. Ran continuous A/B tests on creative and landing pages.</div></div>
+        <div class="case-res"><strong>Result:</strong> Lower cost-per-lead and a higher share of leads that converted to viewings.</div>
+        <div class="case-tools"><span class="case-tool">Meta Advantage+</span><span class="case-tool">Meta Business Suite</span><span class="case-tool">A/B Testing</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">Campaign Signals</div>
+        <div class="bar-row"><div class="bar-lbl"><span>Cost Per Lead</span><b>REDUCED</b></div><div class="bar-bg"><div class="bar-fg" style="width:78%"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Lead to Viewing Rate</span><b>IMPROVED</b></div><div class="bar-bg"><div class="bar-fg" style="width:66%"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Creative Test Velocity</span><b>CONTINUOUS</b></div><div class="bar-bg"><div class="bar-fg" style="width:90%"></div></div></div>
+        <div class="p-foot">
+          <div class="p-stat"><b>META</b><span>Advantage+</span></div>
+          <div class="p-stat"><b>UAE</b><span>Real Estate</span></div>
+          <div class="p-stat"><b>A/B</b><span>Testing</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div>
+        <div class="case-cat">Paid Media</div>
+        <div class="case-t">Rebuilding a Funnel That Was Leaking Budget</div>
+        <div class="opr"><div class="opr-l">Objective</div><div class="opr-t">Fix a client spending entirely on cold top-of-funnel traffic, with no retargeting layer and no reliable conversion tracking in place.</div></div>
+        <div class="opr"><div class="opr-l">Process</div><div class="opr-t">Restructured spend into a full funnel across Meta and Google Performance Max, added retargeting audiences, and implemented proper conversion tracking through GA4 and Meta Pixel.</div></div>
+        <div class="case-res"><strong>Result:</strong> Budget shifted toward what actually worked, lifting return on ad spend.</div>
+        <div class="case-tools"><span class="case-tool">Performance Max</span><span class="case-tool">Meta Ads</span><span class="case-tool">GA4</span><span class="case-tool">Meta Pixel</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">Funnel Architecture</div>
+        <div class="p-stack">
+          <div class="p-item dim"><span>Top of Funnel</span><span>Awareness</span></div>
+          <div class="p-item"><span>Mid Funnel</span><span>Retargeting</span></div>
+          <div class="p-item"><span>Bottom Funnel</span><span>Conversion</span></div>
+        </div>
+        <div class="p-foot">
+          <div class="p-stat"><b>ROAS</b><span>Improved</span></div>
+          <div class="p-stat"><b>GA4</b><span>Tracked</span></div>
+          <div class="p-stat"><b>PMAX</b><span>Google</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div>
+        <div class="case-cat">Organic Social</div>
+        <div class="case-t">Turning a Flat Feed Into an Active Community</div>
+        <div class="opr"><div class="opr-l">Objective</div><div class="opr-t">Transform an inconsistent brand social presence into a planned, engaging content operation that drives real community growth.</div></div>
+        <div class="opr"><div class="opr-l">Process</div><div class="opr-t">Rebuilt the content calendar around short-form reels, layered in active community management, and implemented weekly format testing to identify what resonated with the audience.</div></div>
+        <div class="case-res"><strong>Result:</strong> Steady follower growth and stronger engagement, with several reels outperforming all past content.</div>
+        <div class="case-tools"><span class="case-tool">Meta Business Suite</span><span class="case-tool">Canva</span><span class="case-tool">CapCut</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">Content System</div>
+        <div class="p-stack">
+          <div class="p-item"><span>Short-form Reels</span><span>Weekly Testing</span></div>
+          <div class="p-item"><span>Content Calendar</span><span>Planned</span></div>
+          <div class="p-item"><span>Community Mgmt</span><span>Active</span></div>
+        </div>
+        <div class="p-foot">
+          <div class="p-stat"><b>UP</b><span>Followers</span></div>
+          <div class="p-stat"><b>UP</b><span>Engagement</span></div>
+          <div class="p-stat"><b>TOP</b><span>Reels</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div>
+        <div class="case-cat">AI Marketing</div>
+        <div class="case-t">Scaling Content With AI Without Losing the Voice</div>
+        <div class="opr"><div class="opr-l">Objective</div><div class="opr-t">Increase content output across multiple client accounts without sacrificing brand voice or dropping quality standards.</div></div>
+        <div class="opr"><div class="opr-l">Process</div><div class="opr-t">Built AI tools into the content workflow, using ChatGPT for first drafts and Midjourney for visual concepts, with human editing at every stage to protect brand voice and factual accuracy.</div></div>
+        <div class="case-res"><strong>Result:</strong> Faster turnaround and more output, without dropping quality.</div>
+        <div class="case-tools"><span class="case-tool">ChatGPT</span><span class="case-tool">Midjourney</span><span class="case-tool">Jasper AI</span><span class="case-tool">Canva</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">AI Workflow</div>
+        <div class="p-stack">
+          <div class="p-item"><span>ChatGPT</span><span>First Drafts</span></div>
+          <div class="p-item"><span>Midjourney</span><span>Visual Concepts</span></div>
+          <div class="p-item"><span>Human Editing</span><span>Voice Guard</span></div>
+        </div>
+        <div class="p-foot">
+          <div class="p-stat" style="flex:1"><b>FASTER OUTPUT, SAME QUALITY</b><span>Outcome</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Credentials</div>
+      <h2 class="sec-h">Certified where it counts.</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert"><div class="cert-issuer">Meta</div><div class="cert-n">Meta Social Media Marketing Professional Certificate</div><div class="cert-d">Coursera · May 2026</div></div>
+      <div class="cert"><div class="cert-issuer">Meta</div><div class="cert-n">Meta Certified Digital Marketing Associate</div><div class="cert-d">Valid through Apr 2028</div></div>
+      <div class="cert"><div class="cert-issuer">Google</div><div class="cert-n">Google Digital Marketing &amp; E-commerce Professional Certificate</div><div class="cert-d">Coursera · Aug 2025</div></div>
+      <div class="cert"><div class="cert-issuer">Google</div><div class="cert-n">Think Outside the Inbox: Email Marketing</div><div class="cert-d">Google · Jul 2025</div></div>
+      <div class="cert"><div class="cert-issuer">University of Illinois</div><div class="cert-n">Marketing in a Digital World</div><div class="cert-d">Coursera · Aug 2020</div></div>
+      <div class="cert"><div class="cert-issuer">Google</div><div class="cert-n">Google Digital Garage Certification</div><div class="cert-d">Google · Jun 2020</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="eyebrow">Contact</div>
+        <div class="c-h">Let's build something that <em>performs.</em></div>
+        <p class="c-p">Open to Performance Marketing Manager, Paid Media, PPC, and Search Marketing roles. Available for remote and hybrid work.</p>
+        <div class="c-links">
+          <a href="https://linkedin.com/in/maria-imtiaz-/" class="c-link" target="_blank">
+            <div class="c-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
+            linkedin.com/in/maria-imtiaz-/
+          </a>
+          <a href="mailto:mariaimtiaz5022@gmail.com" class="c-link">
+            <div class="c-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            mariaimtiaz5022@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="form reveal">
+        <div class="frow">
+          <div class="fg"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+        </div>
+        <div class="fg"><label>Subject</label><input type="text" placeholder="Role / Project / Collaboration"></div>
+        <div class="fg"><label>Message</label><textarea rows="5" placeholder="Tell me about the role or campaign..."></textarea></div>
+        <button class="fbtn" onclick="this.textContent='Message Sent'">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-in">
+    <div class="f-t">Maria Imtiaz / Performance Marketing</div>
+    <div class="f-t">© 2026 · All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const l=document.getElementById('loader');
+    l.classList.add('hide');
+    setTimeout(()=>l.remove(),800);
+  },2400);
+});
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.exp-row,.case,.cert').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
